@@ -1,0 +1,36 @@
+div.ImgPresentation {
+  margin: 5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1em 1em;
+  grid-template-areas: '. .';
+  align-items: center;
+}
+
+/* At like 100px change img to be on top */
+
+@media screen and (max-width: 1000px) {
+  div.ImgPresentation {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: '.' '.';
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  div.ImgPresentation {
+    margin: 5vw;
+  }
+
+  div.ImgPresentation .img {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.ImgPresentation > .img {
+    width: 90vw;
+  }
+}

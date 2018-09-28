@@ -10,7 +10,7 @@ export default {
   one: {
     title: 'MONSOON III',
     image: img1,
-    content: "Reef careen grapple pink trysail black jack hulk brigantine chase yardarm. Bowsprit Barbary Coast gunwalls handsomely lugsail Pirate Round prow parrel long boat crack Jennys tea cup. Reef line spanker chase guns ahoy Chain Shot interloper trysail spike lad.Six pounders grog rutters chandler brig heave to Davy Jones' Locker coxswain take a caulk hang the jib. Killick ye bounty six pounders rope's end list loaded to the gunwalls red ensign fire in the hole piracy. Spanker schooner chandler warp Letter of Marque carouser topgallant gangplank hardtack belay.",
+    content: "Reef careen grapple pink trysail black jack hulk brigantine chase yardarm. Bowsprit Barbary Coast gunwalls handsomely lugsail Pirate Round prow parrel long boat crack Jennys tea cup. Reef line spanker chase guns ahoy Chain Shot interloper trysail spike lad.Six pounders grog rutters chandler brig heave to Davy Jones' Locker coxswain.",
   },
   two: {
     title: 'BEAMS',
