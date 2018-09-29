@@ -8,14 +8,47 @@ div.ImgPresentation {
   align-items: center;
 }
 
+.ImgPresentation > .textContent {
+  width: 30vw;
+}
+
+.ImgPresentation.right > .textContent {
+  justify-self: right;
+}
+
+.ImgPresentation.right > .img {
+  justify-self: left;
+  margin-left: 5em;
+}
+
+.ImgPresentation.left > .img {
+  justify-self: right;
+  margin-right: 5em;
+}
+
 /* At like 100px change img to be on top */
 
 @media screen and (max-width: 1000px) {
   div.ImgPresentation {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto;
     grid-template-areas: '.' '.';
-    justify-items: center;
+  }
+  
+  div.ImgPresentation.left > .img,
+  div.ImgPresentation.right > .img {
+    justify-self: center;
+    margin: 0;
+  }
+
+  div.ImgPresentation > .textContent {
+    margin-top: 2em;
+    justify-self: initial;
+    width: 100%;
+  }
+
+  h1.title {
+    margin-top: 0;
   }
 }
 
