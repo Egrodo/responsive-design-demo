@@ -26,8 +26,7 @@ div.ImgPresentation {
   margin-right: 5em;
 }
 
-/* At like 100px change img to be on top */
-
+/* At 1000px change the format to have the images on top */
 @media screen and (max-width: 1000px) {
   div.ImgPresentation {
     grid-template-columns: 1fr;

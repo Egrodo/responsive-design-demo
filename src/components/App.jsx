@@ -3,8 +3,12 @@ import DATA from '../data';
 import ImgPresentation from './ImgPresentation';
 import '../css/App.css';
 
+/* NOTES:
+    - Could lazyload images, but not worth in this case with only three.
+    - shouldComponentUpdate is handled by PureComponent.
+*/
+
 class App extends Component {
-  // TODO: js-css.
   constructor() {
     super();
     this.state = {
@@ -15,12 +19,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // I'm importing all data from a json file that way it'd be usable in real-world cases.
+    // I'm importing all data from a json file to emulate real-world use cases.
     this.setState(DATA);
   }
 
   render() {
-    // TODO: Refactor ImgPresentation to a carosel.
+    // TODO: Carousel
     const { one, two, three } = this.state;
     return (
       <div className="App">

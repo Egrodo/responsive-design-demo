@@ -2,7 +2,6 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import '../css/ImgPresentation.css';
 
-// shouldComponentUpdate is handled by PureComponent
 class ImgPresentation extends PureComponent {
   constructor(props) {
     super(props);
@@ -19,6 +18,8 @@ class ImgPresentation extends PureComponent {
   }
 
   componentDidMount() {
+    // The direction also controls which one is on top when there's a small screen size,
+    // in order to fix implement a resize handler with a debounce to disable dir if width < 1000px.
     if (this.state.dir === 'left') {
       if (window.innerWidth < 1000) this.setState({ small: true });
       window.addEventListener('resize', this.resize);
@@ -27,7 +28,7 @@ class ImgPresentation extends PureComponent {
 
 
   componentWillReceiveProps(nextProps) {
-    // Update state if there's new props.
+    // Update state if there's new props, aka support dynamic server-provided content.
     this.setState(nextProps);
   }
 
@@ -36,8 +37,6 @@ class ImgPresentation extends PureComponent {
   }
 
   resize() {
-    // BUG: the direction also controls which one is on top when small screen size.
-    // In order to fix, implement a resize handler with a debounce to disable dir if width < 1000px.
     if (window.innerWidth < 1000) {
       this.setState({ small: true });
     } else if (this.state.small) this.setState({ small: false });
@@ -48,19 +47,18 @@ class ImgPresentation extends PureComponent {
     return function () {
       if (timerId) clearTimeout(timerId);
       timerId = setTimeout(() => {
-        fn();
+        fn(); // No args to take care of.
         timerId = null;
       }, delay);
     }
   }
 
   render() {
-    // TODO: Lazy load images.
     // eslint-disable-next-line
     const { title, content, image, dir, small } = this.state;
 
     // Ternary rendering to handle dir changes. Could also use conditional rendering
-    // or switch statement, but ternary is faster iirc.
+    // or switch statement, but ternary is faster IIRC.
     return (
       <div className={`ImgPresentation${dir === 'right' ? ' right' : ' left'}`}>
         {small || dir === 'right' ? (
