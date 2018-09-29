@@ -3,7 +3,7 @@ div.ImgPresentation {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-gap: 1em 1em;
+  grid-column-gap: 6em;
   grid-template-areas: '. .';
   align-items: center;
 }
@@ -18,12 +18,10 @@ div.ImgPresentation {
 
 .ImgPresentation.right > .img {
   justify-self: left;
-  margin-left: 5em;
 }
 
 .ImgPresentation.left > .img {
   justify-self: right;
-  margin-right: 5em;
 }
 
 /* At 1000px change the format to have the images on top */
@@ -37,9 +35,13 @@ div.ImgPresentation {
   div.ImgPresentation.left > .img,
   div.ImgPresentation.right > .img {
     justify-self: center;
-    margin: 0;
   }
 
+  .img {
+    width: 100%;
+    margin: 0;
+  }
+  
   div.ImgPresentation > .textContent {
     margin-top: 2em;
     justify-self: initial;
@@ -56,7 +58,7 @@ div.ImgPresentation {
     margin: 5vw;
   }
 
-  div.ImgPresentation .img {
+  div.ImgPresentation > .img {
     width: 80vw;
   }
 }
