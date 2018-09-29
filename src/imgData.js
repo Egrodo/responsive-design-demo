@@ -1,7 +1,8 @@
 /*
-  Data JSON, I'm using an object to preserve ordering because arrays can lose order
+  Image data JSON, I'm using an object to preserve ordering because arrays can lose order
   in some cases and I'm relying on their ordering for correct placement in the page.
 */
+
 import img1 from './img/img1.jpg';
 import img2 from './img/img2.jpg';
 import img3 from './img/img3.jpg';
