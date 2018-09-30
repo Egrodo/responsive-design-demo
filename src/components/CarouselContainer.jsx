@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CarouselView from './CarouselView';
+import '../css/CarouselContainer.css';
 
-class CarouselPresentation extends Component {
+class CarouselContainer extends Component {
   constructor(props) {
     super(props);
 
@@ -12,25 +13,26 @@ class CarouselPresentation extends Component {
   }
 
   /*
-    Carousel container which renders all of the views side by side. When you click an arrow (or after x seconds),
-    move the view to the right or left appropriately.
+    Carousel container which renders all of the views side by side.
+    When you click an arrow (or after x seconds), move the view to the right or left appropriately.
   */
+
   render() {
     const { moviesArray } = this.state;
     return (
-      <div className="CarouselPresentation">
+      <div className="CarouselContainer">
         <CarouselView item={moviesArray[0]} />
       </div>
     );
   }
 }
 
-CarouselPresentation.propTypes = {
+CarouselContainer.propTypes = {
   moviesArray: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
 };
 
-CarouselPresentation.defaultProps = {
+CarouselContainer.defaultProps = {
   moviesArray: [],
 };
 
-export default CarouselPresentation;
+export default CarouselContainer;

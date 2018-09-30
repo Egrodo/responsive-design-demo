@@ -2,6 +2,17 @@ import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import '../css/ImgPresentation.css';
 
+const debounce = (delay, fn) => {
+  let timerId;
+  return function () {
+    if (timerId) clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      fn(); // No args to take care of in this case.
+      timerId = null;
+    }, delay);
+  };
+};
+
 class ImgPresentation extends PureComponent {
   constructor(props) {
     super(props);
@@ -14,7 +25,7 @@ class ImgPresentation extends PureComponent {
       small: false,
     };
 
-    this.resize = this.debounce(200, this.resize.bind(this));
+    this.resize = debounce(200, this.resize.bind(this));
   }
 
   componentDidMount() {
@@ -40,17 +51,6 @@ class ImgPresentation extends PureComponent {
     if (window.innerWidth < 1000) {
       this.setState({ small: true });
     } else if (this.state.small) this.setState({ small: false });
-  }
-
-  debounce(delay, fn) {
-    let timerId;
-    return function () {
-      if (timerId) clearTimeout(timerId);
-      timerId = setTimeout(() => {
-        fn(); // No args to take care of.
-        timerId = null;
-      }, delay);
-    }
   }
 
   render() {

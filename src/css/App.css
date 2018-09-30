@@ -2,12 +2,25 @@
   width: 100%;
 }
 
+section.carousel {
+  padding: 5em 0 5em;  
+}
+
+section.carousel > img.bgImg {
+  width: 100%;
+  height: fit-content;
+  filter: blur(2.5em);
+  position: absolute;
+  z-index: -1;
+}
+
 section.white {
   background-color: white;
+  padding: 5em 0 5em;
 }
 
 section.gradient {
-  padding-top: 5em;
+  padding: 5em 0 5em;
   background: linear-gradient(black, white);
   color: white;
 }

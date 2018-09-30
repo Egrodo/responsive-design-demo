@@ -1,15 +1,16 @@
 div.ImgPresentation {
-  margin: 5em;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-column-gap: 6em;
   grid-template-areas: '. .';
   align-items: center;
+  margin: 0 10em 0 10em;
 }
 
-.ImgPresentation > .textContent {
-  width: 30vw;
+.ImgPresentation > .textContent,
+.ImgPresentation > .img {
+  width: 100%;
 }
 
 .ImgPresentation.right > .textContent {
@@ -37,15 +38,16 @@ div.ImgPresentation {
     justify-self: center;
   }
 
-  .img {
-    width: 100%;
+  .ImgPresentation > img.img {
+    width: 80%;
     margin: 0;
   }
   
-  div.ImgPresentation > .textContent {
+  div.ImgPresentation.right > .textContent,
+  div.ImgPresentation.left > .textContent {
+    justify-self: center;
     margin-top: 2em;
-    justify-self: initial;
-    width: 100%;
+    width: 80%;
   }
 
   h1.title {
@@ -57,14 +59,16 @@ div.ImgPresentation {
   div.ImgPresentation {
     margin: 5vw;
   }
-
-  div.ImgPresentation > .img {
-    width: 80vw;
-  }
 }
 
 @media screen and (max-width: 500px) {
   div.ImgPresentation > .img {
     width: 90vw;
+  }
+
+  div.ImgPresentation.right > .textContent,
+  div.ImgPresentation.left > .textContent {
+    justify-self: left;
+    width: 100%;
   }
 }

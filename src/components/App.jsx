@@ -2,7 +2,8 @@ import React from 'react';
 import imgData from '../imgData';
 import carouselData from '../carouselData';
 import ImgPresentation from './ImgPresentation';
-import CarouselPresentation from './CarouselPresentation';
+import CarouselContainer from './CarouselContainer';
+import bgImg from '../img/background1.jpg';
 import '../css/App.css';
 
 const App = () => {
@@ -12,7 +13,8 @@ const App = () => {
   return (
     <div className="App">
       <section className="carousel">
-        <CarouselPresentation moviesArray={carouselData} />
+        <img className="bgImg" src={bgImg} alt="background" />
+        <CarouselContainer moviesArray={carouselData} />
       </section>
       <section className="white">
         <ImgPresentation title={one.title} content={one.content} image={one.image} dir="left" />
