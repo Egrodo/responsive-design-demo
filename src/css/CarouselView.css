@@ -136,6 +136,14 @@ button.slick-arrow::before {
   div.btns {
     font-size: 11px;
   }
+
+  button.slick-prev {
+    left: 0;
+  }
+  
+  button.slick-next {
+    right: 0;
+  }
 }
 
 @media screen and (max-width: 1000px) {

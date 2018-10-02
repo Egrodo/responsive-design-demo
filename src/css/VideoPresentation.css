@@ -24,7 +24,6 @@ iframe.vimeoVideo {
 }
 
 @media screen and (max-width: 1000px) {
-  /* Change CSS Grid */
   div.VideoPresentation {
     grid-template-columns: 1fr;
     grid-template-areas: '.' '.';
@@ -52,7 +51,7 @@ iframe.vimeoVideo {
   div.VideoPresentation {
     margin: 0 5vw;
   }
-  
+
   iframe.vimeoVideo {
     width: 90vw;
     margin-bottom: -6em;
