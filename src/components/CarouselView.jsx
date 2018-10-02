@@ -17,20 +17,20 @@ class CarouselView extends Component {
           <img className="cover" src={image} alt={title} />
         </div>
         <div className="content">
-          <h1>{title}</h1>
-          <p>
+          <h1 className="movieTitle">{title}</h1>
+          <p className="blurb">
             {blurb}
           </p>
           <div className="btns">
             <button className="buy" type="button">
               <svg viewBox="0 0 200 200" alt="Play video">
-                <circle cx="100" cy="100" r="90" fill="none" strokeWidth="15" stroke="#000" />
-                <polygon points="70, 55 70, 145 145, 100" fill="#000" />
+                <circle cx="100" cy="100" r="90" fill="none" strokeWidth="15" stroke="white" />
+                <polygon points="70, 55 70, 145 145, 100" fill="white" />
               </svg>
-              Buy Now
+              <p>Buy Now</p>
             </button>
             <button className="watch" type="button">
-              Watch Trailer
+              <p>Watch Now</p>
             </button>
           </div>
         </div>

@@ -1,18 +1,12 @@
 .CarouselView {
   display: grid;
-  /* 
-    TODO: 
-    Align the image to the far left, place the content to its right in like 2fr size.
-    Figure out img blurring solution, I think this one is fine just fix the colors a bit.
-    
-  */
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 2em;
   grid-template-areas: '. .';
 }
 
 div.imgGradient {
+  grid-column: 2 / 4;
   height: 20em;
   justify-self: right;
   position: relative;
@@ -20,14 +14,90 @@ div.imgGradient {
   box-shadow: 1px solid black;
 }
 
-  div.imgGradient::after {
-    position: absolute;
-    content: '';
-    top: 0; bottom: 0;
-    right: 0; left: 0;
-    background-image: linear-gradient(transparent 70%, rgba(35, 148, 214, 1));
-  }
+div.imgGradient::after {
+  position: absolute;
+  content: '';
+  top: 0; bottom: 0;
+  right: 0; left: 0;
+  background-image: linear-gradient(transparent 70%, rgba(35, 148, 214, 1));
+}
 
 img.cover {
   height: 100%;
+}
+
+div.content {
+  margin-left: 2em;
+  grid-column: 4 / 7;
+}
+
+h1.movieTitle {
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+p.blurb {
+  font-size: .9em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+div.btns {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+button.buy {
+  display: inline-block;
+  background-color: #18aaff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0 1em;
+  margin-right: 1em;
+  font-size: 1.1em;
+  border: 2px solid transparent;
+  transform: translateY(.15em);
+  transition-duration: 0.4s;
+}
+
+button.buy:hover {
+  cursor: pointer;
+  border: 2px solid white;
+  /* box-shadow: 1px 2px 0px 1px #85d2ff; */
+}
+
+button.buy > svg {
+  height: 1.7em;
+  margin-right: .8em;
+  transform: translateY(.45em);
+  display: inline-block;
+}
+
+button.buy > p {
+  transform: translateY(-.1em);
+  display: inline-block;
+  padding: .5em 0;
+  margin: 0;
+}
+
+button.watch {
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 6px;
+  font-size: 1.1em;
+  padding: .6em 1em;
+  text-align: center;
+  display: inline-block;
+  transition-duration: 0.4s;
+}
+
+button.watch:hover {
+  background-color: #18aaff;
+  color: white;
+  cursor: pointer;
+}
+
+button.watch > p {
+  margin: 0;
 }
