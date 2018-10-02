@@ -23,6 +23,12 @@ const App = () => {
         <ImgPresentation title={two.title} content={two.content} image={two.image} dir="right" />
         <ImgPresentation title={three.title} content={three.content} image={three.image} dir="left" />
       </section>
+      <footer>
+        Thank you!
+        <a href="https://linkedin.com/in/noah-y">
+          Noah Yamamoto
+        </a>
+      </footer>
     </div>
   );
 };

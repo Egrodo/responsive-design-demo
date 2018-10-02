@@ -11,7 +11,6 @@ div.imgGradient {
   justify-self: right;
   position: relative;
   display: inline-block;
-  box-shadow: 1px solid black;
 }
 
 div.imgGradient::after {
@@ -62,7 +61,6 @@ button.buy {
 button.buy:hover {
   cursor: pointer;
   border: 1px solid white;
-  /* box-shadow: 1px 2px 0px 1px #85d2ff; */
 }
 
 button.buy > svg {
@@ -130,13 +128,90 @@ button.slick-arrow::before {
   color: white;
 }
 
-@media screen and (max-width: 1300px) {
-  /* TODO: Need to move around the content in jsx too.
-     I'm thinking header, img, desc, btns.
-  */
-  .CarouselView {
+/* NOTE:
+  In the future, I would design this carousel mobile-first
+  to avoid some of these problems.
+*/
+@media screen and (max-width: 1250px) {
+  div.btns {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  section.carousel {
+    padding-top: 3em;
+  }
+
+  div.CarouselView {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas: '.' '.';
+    font-size: 14px;
+  }
+
+  div.imgGradient {
+    grid-column: 2 / 4;
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  div.imgGradient > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  div.content {
+    grid-column: 2 / 4;
+    margin-left: 0;
+  }
+
+  div.content {
+    text-align: center;
+    grid-column: 1 / 5;
+    justify-self: center;
+  }
+
+  div.btns {
+    text-align: center;
+  }
+
+  button.slick-arrow::before {
+    content: none;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  div.CarouselContainer {
+    margin: 0 5em;
+  }
+
+  div.CarouselView {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  section.carousel {
+    padding-top: 2em;
+  }
+
+  div.CarouselContainer {
+    margin: 0 2em;
+  }
+
+  div.CarouselView {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 4fr 1fr 1fr;
-    grid-template-areas: '.' '.' '.' '.';
+    grid-template-areas: '.';
+  }
+
+  div.imgGradient {
+    grid-column: 1 / 5;
+    width: 70vw;
+  }
+
+  div.btns {
+    font-size: .8em;
   }
 }

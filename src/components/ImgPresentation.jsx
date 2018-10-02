@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import '../css/ImgPresentation.css';
 
@@ -26,7 +26,7 @@ class ImgPresentation extends PureComponent {
   componentDidMount() {
     // The direction also controls which one is on top when there's a small screen size,
     // in order to fix implement a resize handler with a debounce to disable dir if width < 1000px.
-    if (this.state.dir === 'left') {
+    if (this.props.dir === 'left') {
       if (window.innerWidth < 1000) this.setState({ smallScreen: true });
       window.addEventListener('resize', this.resize);
     }
@@ -49,29 +49,29 @@ class ImgPresentation extends PureComponent {
 
   render() {
     // eslint-disable-next-line
-    const { title, content, image, dir, smallScreen } = this.props;
-
-    // Ternary rendering to handle dir changes. Could also use conditional rendering
+    const { title, content, image, dir } = this.props;
+    const { smallScreen } = this.state;
+    // Ternary rendering to handle dir changes. Could also use if block
     // or switch statement, but ternary is faster IIRC.
     return (
       <div className={`ImgPresentation${dir === 'right' ? ' right' : ' left'}`}>
         {smallScreen || dir === 'right' ? (
-          <Fragment>
+          <>
             <div className="textContent">
               <h1 className="title">{title}</h1>
               <p className="content">{content}</p>
             </div>
             <img src={image} alt={title} className="img" />
-          </Fragment>
+          </>
         )
           : (
-            <Fragment>
+            <>
               <img src={image} alt={title} className="img" />
               <div className="textContent">
                 <h1 className="title">{title}</h1>
                 <p className="content">{content}</p>
               </div>
-            </Fragment>
+            </>
           )}
       </div>
     );

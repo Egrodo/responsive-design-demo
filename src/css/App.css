@@ -2,11 +2,11 @@
   width: 100%;
 }
 
-section.carousel {
+.carousel {
   padding: 5em 0 5em;  
 }
 
-section.carousel > img.bgImg {
+.carousel > img.bgImg {
   width: 100%;
   height: fit-content;
   filter: blur(2.5em);
@@ -14,13 +14,30 @@ section.carousel > img.bgImg {
   z-index: -1;
 }
 
-section.white {
+.white {
   background-color: white;
   padding: 5em 0 5em;
 }
 
-section.gradient {
+.gradient {
   padding: 5em 0 5em;
   background: linear-gradient(black, white);
   color: white;
+}
+
+footer {
+  width: 100%;
+  height: 2em;
+  text-align: center;
+}
+
+footer > a {
+  margin-left: .4em;
+  text-decoration: none;
+  color: rgb(0, 174, 255);
+}
+
+footer > a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
