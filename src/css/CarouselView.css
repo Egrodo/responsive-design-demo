@@ -1,4 +1,4 @@
-.CarouselView {
+div.CarouselView {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: 1fr;
@@ -128,4 +128,15 @@ button.slick-arrow::before {
 }
 .slick-dots li.slick-active button::before {
   color: white;
+}
+
+@media screen and (max-width: 1300px) {
+  /* TODO: Need to move around the content in jsx too.
+     I'm thinking header, img, desc, btns.
+  */
+  .CarouselView {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr 1fr 1fr;
+    grid-template-areas: '.' '.' '.' '.';
+  }
 }
