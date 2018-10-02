@@ -1,9 +1,6 @@
 .App > section {
   width: 100%;
-}
-
-.carousel {
-  padding: 5em 0 5em;  
+  padding: 5em 0 5em;
 }
 
 .carousel > img.bgImg {
@@ -16,11 +13,9 @@
 
 .white {
   background-color: white;
-  padding: 5em 0 5em;
 }
 
 .gradient {
-  padding: 5em 0 5em;
   background: linear-gradient(black, white);
   color: white;
 }

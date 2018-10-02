@@ -5,7 +5,7 @@ div.ImgPresentation {
   grid-column-gap: 6em;
   grid-template-areas: '. .';
   align-items: center;
-  margin: 0 10em 0 10em;
+  margin: 0 10em;
 }
 
 .ImgPresentation > .textContent,
@@ -29,7 +29,6 @@ div.ImgPresentation {
 @media screen and (max-width: 1000px) {
   div.ImgPresentation {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     grid-template-areas: '.' '.';
   }
   
@@ -57,7 +56,7 @@ div.ImgPresentation {
 
 @media screen and (max-width: 700px) {
   div.ImgPresentation {
-    margin: 5vw;
+    margin: 0 5vw;
   }
 }
 

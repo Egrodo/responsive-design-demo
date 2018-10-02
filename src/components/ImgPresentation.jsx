@@ -24,6 +24,12 @@ class ImgPresentation extends PureComponent {
   }
 
   componentDidMount() {
+    /* NOTE:
+       I'm using a debounced resize listener to change the direction of content so
+       it doesn't cause css problems. In the real world css changes are much less expensive
+       than JS calls so I'd modify my CSS Grid setup to add named areas and rearrange content
+       based on media queries instead.
+    */
     // The direction also controls which one is on top when there's a small screen size,
     // in order to fix implement a resize handler with a debounce to disable dir if width < 1000px.
     if (this.props.dir === 'left') {

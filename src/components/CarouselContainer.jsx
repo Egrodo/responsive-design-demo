@@ -14,7 +14,7 @@ const CarouselContainer = (props) => {
   const settings = {
     infinite: true,
     dots: true,
-    // autoplay: true,
+    autoplay: true,
     speed: 500,
     lazyLoad: 'progressive',
   };

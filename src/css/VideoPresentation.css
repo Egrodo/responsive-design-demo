@@ -1,0 +1,61 @@
+.VideoPresentation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 6em;
+  grid-template-areas: '. .';
+  align-items: center;
+  margin: 0 10em;
+}
+
+.VideoPresentation .vimeoVideo {
+  justify-self: right;
+}
+
+iframe.vimeoVideo {
+  width: 100%;
+}
+
+/* iframes are not very fun to handle responsively */
+@media screen and (max-width: 1300px) {
+  iframe.vimeoVideo {
+    width: 120%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  /* Change CSS Grid */
+  div.VideoPresentation {
+    grid-template-columns: 1fr;
+    grid-template-areas: '.' '.';
+    grid-gap: 2em;
+  }
+
+  iframe.vimeoVideo {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  div.VideoPresentation {
+    margin: 0 15vw;
+  }
+
+  iframe.vimeoVideo {
+    width: 100%;
+    margin-bottom: -4.5em;
+    margin-top: -4.5em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.VideoPresentation {
+    margin: 0 5vw;
+  }
+  
+  iframe.vimeoVideo {
+    width: 90vw;
+    margin-bottom: -6em;
+    margin-top: -6em;
+  }
+}

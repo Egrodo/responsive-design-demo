@@ -3,6 +3,7 @@ import imgData from '../imgData';
 import carouselData from '../carouselData';
 import ImgPresentation from './ImgPresentation';
 import CarouselContainer from './CarouselContainer';
+import VideoPresentation from './VideoPresentation';
 import bgImg from '../img/background1.jpg';
 import '../css/App.css';
 
@@ -17,7 +18,7 @@ const App = () => {
         <CarouselContainer moviesArray={carouselData} />
       </section>
       <section className="white">
-        <ImgPresentation title={one.title} content={one.content} image={one.image} dir="left" />
+        <VideoPresentation videoId="93641234" title={one.title} content={one.content} />
       </section>
       <section className="gradient">
         <ImgPresentation title={two.title} content={two.content} image={two.image} dir="right" />
