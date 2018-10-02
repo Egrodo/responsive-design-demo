@@ -102,3 +102,30 @@ button.watch > p {
   margin: 0;
   font-weight: 600;
 }
+
+/* Start react-slick tweaks + responsiveness */
+
+button.slick-prev {
+  left: 100px;
+}
+
+button.slick-next {
+  right: 100px;
+}
+
+button.slick-arrow {
+  width: 2vw;
+  height: 2vw;
+  z-index: 1;
+}
+
+button.slick-arrow::before {
+  font-size: 2vw;
+}
+.slick-dots li button::before {
+  color: white;
+  opacity: .25;
+}
+.slick-dots li.slick-active button::before {
+  color: white;
+}

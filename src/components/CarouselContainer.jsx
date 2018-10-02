@@ -14,8 +14,8 @@ class CarouselContainer extends Component {
   }
 
   /*
-    Carousel container which renders all of the views side by side.
-    When you click an arrow (or after x seconds), move the view to the right or left appropriately.
+    Using React port of Slick carousel library for deadline efficiency. Could implement custom carousel if
+    I had the time, here's one I've coded previously https://github.com/Egrodo/giphyreact/blob/master/src/Search.jsx
   */
 
   render() {
