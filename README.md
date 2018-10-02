@@ -1,6 +1,6 @@
-# Vimeo Coding Challenge
-This is a responsive design challenge for the Vimeo 2019 Summer Internship.
-In order to view you can go to the Github Pages link here: https://egrodo.github.io/vimeo-coding-test/
+# responsive-design-demo
+This is an example of a modern React based responsive webpage done for a coding challenge. 
+In order to view you can go to the Github Pages link here: https://egrodo.github.io/responsive-design-demo/
 
 Or you can do the following:
 1. `git pull` the repo to a folder
