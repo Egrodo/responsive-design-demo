@@ -43,7 +43,6 @@ p.blurb {
 
 div.btns {
   text-transform: uppercase;
-  font-weight: 600;
 }
 
 button.buy {
@@ -55,14 +54,14 @@ button.buy {
   padding: 0 1em;
   margin-right: 1em;
   font-size: 1.1em;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   transform: translateY(.15em);
   transition-duration: 0.4s;
 }
 
 button.buy:hover {
   cursor: pointer;
-  border: 2px solid white;
+  border: 1px solid white;
   /* box-shadow: 1px 2px 0px 1px #85d2ff; */
 }
 
@@ -78,12 +77,13 @@ button.buy > p {
   display: inline-block;
   padding: .5em 0;
   margin: 0;
+  font-weight: 600;
 }
 
 button.watch {
   color: white;
   background: transparent;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 6px;
   font-size: 1.1em;
   padding: .6em 1em;
@@ -100,4 +100,5 @@ button.watch:hover {
 
 button.watch > p {
   margin: 0;
+  font-weight: 600;
 }
