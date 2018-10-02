@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Slider from 'react-slick';
 import CarouselView from './CarouselView';
 import '../css/CarouselContainer.css';
 
@@ -19,9 +20,18 @@ class CarouselContainer extends Component {
 
   render() {
     const { moviesArray } = this.state;
+    const settings = {
+      infinite: true,
+      dots: true,
+      autoplay: true,
+      speed: 500,
+      lazyLoad: 'progressive',
+    };
     return (
       <div className="CarouselContainer">
-        <CarouselView item={moviesArray[0]} />
+        <Slider {...settings}>
+          {moviesArray.map(item => <CarouselView item={item} key={item.title} />)}
+        </Slider>
       </div>
     );
   }
